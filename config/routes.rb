@@ -5,7 +5,11 @@ Rails.application.routes.draw do
         registrations: 'api/v1/registrations'
       }
 
-      resources :events, only: :index
+      resources :events, only: :index do
+        collection do
+          get "/search", to: "search#index", as: :search
+        end
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
