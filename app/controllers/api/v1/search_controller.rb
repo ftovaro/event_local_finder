@@ -1,4 +1,4 @@
-class Api::V1::SearchController < ApplicationController
+class Api::V1::SearchController < Api::BaseController
   skip_before_action :verify_authenticity_token
 
   def index
